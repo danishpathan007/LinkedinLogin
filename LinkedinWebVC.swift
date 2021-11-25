@@ -1,6 +1,5 @@
 //
 //  LinkedinWebVC.swift
-//  SoapBox
 //
 //  Created by Danish Khan on 05/07/21.
 //
@@ -26,8 +25,8 @@ class LinkedinWebVC: UIViewController,UIWebViewDelegate {
     
     @IBOutlet weak var webView: WKWebView!
     
-    let linkedInKey = "78c3wz5pjelrgz"
-    let linkedInSecret = "u8D6GVaMzKtx7DWo"
+    let linkedInKey = "XXXXXXXXXXX"
+    let linkedInSecret = "XXXXXXXXXXX"
     let authorizationEndPoint = "https://www.linkedin.com/oauth/v2/authorization"
     let accessTokenEndPoint = "https://www.linkedin.com/oauth/v2/accessToken"
     let callBackURL = "https://com.elsner.linkedin.oauth/oauth"
@@ -38,19 +37,7 @@ class LinkedinWebVC: UIViewController,UIWebViewDelegate {
         super.viewDidLoad()
         av = Loader.start(view: view)
         webView.navigationDelegate = self
-        
-//        if let linkedinToken = UserDefaultManager.sharedManager.objectForKey(key: Constants.UserDefaultKey.linkedinToken) as? String{
-//            print(linkedinToken)
-//            requestForEmailAddress(accessToken: linkedinToken) { (isSuccess, error) in
-//                    self.socialID = linkedinToken
-//                    self.av.removeFromSuperview()
-//                    self.delegate?.linkidinSuccessWith(name: self.name, email: self.emailID, image: self.userImage, socialID: self.socialID)
-//                    self.navigationController?.popViewController(animated: true)
-//            }
-//        }else{
-            self.startAuthorization()
-        //}
-      
+        self.startAuthorization()      
     }
     
     override func didReceiveMemoryWarning() {
